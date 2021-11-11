@@ -33,10 +33,11 @@ string longestPalindrome(string s, int &start, int &end) {
 
 int main()
 {
+    vector<string> a{};
     int start = 0, end = 0;
     string s, all_s = "", palin_s="";
     while(getline(cin,s)){
-        all_s += s;
+        all_s += (s+'\n');
     }
 
     // cout << all_s;
@@ -60,10 +61,15 @@ int main()
     // cout << huiwen << endl;
     // cout << (start == palin_s.find(huiwen)) << endl;
     
-    // int diff_index = 0;
-    // for(int i=start; i < all_s.size(); ++i){
-    //     if()
-    // }
-
+    for(const auto x:index_others){
+        if(start >= x){
+            ++start;
+        }
+        if(end >= x){
+            ++end;
+        }
+    }
+    cout << huiwen.size() << endl;
+    cout << all_s.substr(start,end-start+1) << endl;
     return 0;
 }
