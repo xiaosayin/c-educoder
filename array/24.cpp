@@ -19,7 +19,7 @@ void dfs(int curr, int steps)
 {
     // 达到全零矩阵
     // if (bits == 0)
-    if(bits == 0)
+    if(bits == pow(2,25)-1)
     {
         res = min(res, steps);
         return;
@@ -63,31 +63,36 @@ int main()
     rows = 5;
     cols =5;
     int mat[rows][cols];
-    for(int i=0; i<rows; ++i){
-        for(int j=0; j<cols;++j){
-            cin >> mat[i][j];
-        }
+    string s1, s2 = "";
+    while(getline(cin,s1)){
+        s2 += s1;
     }
 
     for(int i=0; i<rows; ++i){
         for(int j=0; j<cols;++j){
-            cout << mat[i][j] << " ";
+            mat[i][j] = s2[i * cols + j] - '0';
         }
-        cout << endl;
     }
 
-    for(int i=0; i<rows; ++i){
-        for(int j=0; j<cols;++j){
-            if(mat[i][j] == 1){
-                mat[i][j] = 0;
-            }
-            else{
-                mat[i][j] = 1;
-            }
-            cout << mat[i][j] << " ";
-        }
-        cout << endl;
-    }
+    // for(int i=0; i<rows; ++i){
+    //     for(int j=0; j<cols;++j){
+    //         cout << mat[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    // for(int i=0; i<rows; ++i){
+    //     for(int j=0; j<cols;++j){
+    //         if(mat[i][j] == 1){
+    //             mat[i][j] = 0;
+    //         }
+    //         else{
+    //             mat[i][j] = 1;
+    //         }
+    //         cout << mat[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
 
     
 
